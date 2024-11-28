@@ -3,7 +3,7 @@ const { SnippingDetail } = require('../models');
 const ethers = require('ethers');
 const chalk = require('chalk');
 const Web3 = require('web3');
-const app = require('../app.js');
+// const app = require('../app.js');
 
 /*****************************************************************************************************
  * Find the new liquidity Pair with specific token while scanning the mempool in real-time.
@@ -217,7 +217,7 @@ async function buy(
 
   // Send the response to the frontend so let the frontend display the event.
 
-  var aWss = app.wss.getWss('/');
+  // var aWss = app.wss.getWss('/');
   aWss.clients.forEach(function (client) {
     var detectObj = {
       type: 'snipping',

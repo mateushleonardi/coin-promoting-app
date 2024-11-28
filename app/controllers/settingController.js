@@ -1,11 +1,11 @@
 const { Snipping, Front, SnippingDetail, FrontDetail } = require('../models');
-const app = require('../app.js');
+// const app = require('../app.js');
 
 function sendUpdateMessage() {
-  var aWss = app.wss.getWss('/');
-  aWss.clients.forEach(function (client) {
-    client.send('setting Updated');
-  });
+  // var aWss = app.wss.getWss('/');
+  // aWss.clients.forEach(function (client) {
+    // client.send('setting Updated');
+  // });
 }
 
 function resetSnipping(req, res) {

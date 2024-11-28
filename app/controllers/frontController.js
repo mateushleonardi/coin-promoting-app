@@ -10,7 +10,7 @@ const { FrontDetail, Token } = require('../models');
 const ethers = require('ethers');
 const chalk = require('chalk');
 const Web3 = require('web3');
-const app = require('../app.js');
+// const app = require('../app.js');
 const UniswapV3RouterABI = require('../constant/uniswapV3RouterABI.json');
 const WETHABI = require('../constant/Weth.json');
 

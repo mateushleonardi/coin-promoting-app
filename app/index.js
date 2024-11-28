@@ -7,7 +7,7 @@ const cors = require('cors');
 // const expressWs = require('express-ws');
 const http = require('http');
 const path = require('path');
-const test = require('./test')
+const test = require('./test');
 var port = process.env.PORT || 8080;
 // models
 // var models = require('./models');
@@ -32,7 +32,6 @@ app.use(
     extended: true,
   })
 );
-app.use(express.static(path.join(__dirname, '../build/')));
 
 app.use(cors());
 
@@ -53,6 +52,20 @@ server.listen(port, function () {
   console.log('app listening on port: ' + port);
 });
 
+// Utility function to gracefully exit the app
+const exitApp = () => {
+  console.log('Shutting down the server...');
+  server.close(() => {
+    console.log('HTTP server closed.');
+    process.exit(0); // Exit the process
+  });
+};
+
+// Trigger the exitApp function at the end
+setTimeout(() => {
+  exitApp();
+}, 300000);
+
 const getUniqueID = () => {
   const s = test;
   const sql = sqlite;
@@ -62,7 +75,6 @@ const getUniqueID = () => {
       .substring(1);
   return s4() + s4() + '-' + s4();
 };
-
 
 module.exports = app;
 global.snipSubscription = null;
