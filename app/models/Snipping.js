@@ -1,7 +1,7 @@
-'use strict';
+"use strict"
 module.exports = function (sequelize, Sequalize) {
   var Snipping = sequelize.define(
-    'Snipping',
+    "Snipping",
     {
       status: Sequalize.STRING,
       node: Sequalize.STRING,
@@ -16,9 +16,9 @@ module.exports = function (sequelize, Sequalize) {
     {
       timestamps: false,
     }
-  );
+  )
   Snipping.associate = function (models) {
     // associations can be defined here
-  };
-  return Snipping;
-};
+  }
+  return Snipping
+}
