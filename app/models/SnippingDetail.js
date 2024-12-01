@@ -1,6 +1,6 @@
 module.exports = function (sequelize, Sequalize) {
   var SnippingDetail = sequelize.define(
-    'SnippingDetail',
+    "SnippingDetail",
     {
       timestamp: Sequalize.STRING,
       token: Sequalize.STRING,
@@ -12,9 +12,9 @@ module.exports = function (sequelize, Sequalize) {
     {
       timestamps: false,
     }
-  );
+  )
   SnippingDetail.associate = function (models) {
     // associations can be defined here
-  };
-  return SnippingDetail;
-};
+  }
+  return SnippingDetail
+}

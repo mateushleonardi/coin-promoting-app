@@ -1,6 +1,6 @@
 module.exports = function (sequelize, Sequalize) {
   var FrontDetail = sequelize.define(
-    'FrontDetail',
+    "FrontDetail",
     {
       timestamp: Sequalize.STRING,
       token: Sequalize.STRING,
@@ -12,9 +12,9 @@ module.exports = function (sequelize, Sequalize) {
     {
       timestamps: false,
     }
-  );
+  )
   FrontDetail.associate = function (models) {
     // associations can be defined here
-  };
-  return FrontDetail;
-};
+  }
+  return FrontDetail
+}
