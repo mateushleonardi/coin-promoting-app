@@ -1,45 +1,45 @@
-import { ENVS } from '../../helpers/configurations';
-import emeraldImg from '../../assets/img/emerald.png';
-import rubyImg from '../../assets/img/ruby.png';
-import diamondImg from '../../assets/img/diamond.png';
-import arrowImg from '../../assets/img/arrow_up.svg';
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './DetailInfo.css';
+import { ENVS } from "../../helpers/configurations"
+import emeraldImg from "../../assets/img/emerald.png"
+import rubyImg from "../../assets/img/ruby.png"
+import diamondImg from "../../assets/img/diamond.png"
+import arrowImg from "../../assets/img/arrow_up.svg"
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import "./DetailInfo.css"
 
 export const DetailInfo = (props) => {
-  const data = props.data;
-  const id = props.id;
+  const data = props.data
+  const id = props.id
 
-  const [loading, setLoading] = useState(true);
-  const [upgradable, setUpgradable] = useState(false);
-  const [tierString, setTierString] = useState('');
-  const [tierImg, setTierImg] = useState('');
+  const [loading, setLoading] = useState(true)
+  const [upgradable, setUpgradable] = useState(false)
+  const [tierString, setTierString] = useState("")
+  const [tierImg, setTierImg] = useState("")
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   useEffect(() => {
-    setLoading(false);
+    setLoading(false)
 
     if (data.voteCount < ENVS.DIAMOND_TIRE_LIMIT) {
-      setUpgradable(true);
+      setUpgradable(true)
     }
 
     if (data.voteCount >= ENVS.DIAMOND_TIRE_LIMIT) {
-      setTierString('Diamond Tier ');
-      setTierImg(diamondImg);
+      setTierString("Diamond Tier ")
+      setTierImg(diamondImg)
     } else if (data.voteCount >= ENVS.RUBY_TIRE_LIMIT) {
-      setTierString('Ruby Tier');
-      setTierImg(rubyImg);
+      setTierString("Ruby Tier")
+      setTierImg(rubyImg)
     } else {
-      setTierString('Emerald Tier');
-      setTierImg(emeraldImg);
+      setTierString("Emerald Tier")
+      setTierImg(emeraldImg)
     }
-  }, [loading]);
+  }, [loading])
 
   const upgradeClicked = (data) => {
-    navigate('/tiers/', { state: { info: data, id: id } });
-  };
+    navigate("/tiers/", { state: { info: data, id: id } })
+  }
   return (
     <div className="detailInfoDiv">
       <div className="detailInfoWrappedDiv">
@@ -76,7 +76,7 @@ export const DetailInfo = (props) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DetailInfo;
+export default DetailInfo
