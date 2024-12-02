@@ -1,7 +1,7 @@
-import './Trendbar.css';
+import "./Trendbar.css"
 // import coinImgExample from '../../assets/img/coin_example.png';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react"
+import ReactDOM from "react-dom"
 
 export const Trendbar = () => {
   return (
@@ -30,7 +30,7 @@ export const Trendbar = () => {
                 </div> */}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Trendbar;
+export default Trendbar

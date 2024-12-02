@@ -1,32 +1,32 @@
-import './Intro.scss';
+import "./Intro.scss"
 
-import banner from '../../assets/img/banner image-01.jpg';
-import dropBack from '../../assets/img/2-geeks-by-drop-date-01.png';
-import dropDate from '../../assets/img/drop dates.png';
-import minus from '../../assets/img/minus.svg';
-import plus from '../../assets/img/plus.svg';
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import banner from "../../assets/img/banner image-01.jpg"
+import dropBack from "../../assets/img/2-geeks-by-drop-date-01.png"
+import dropDate from "../../assets/img/drop dates.png"
+import minus from "../../assets/img/minus.svg"
+import plus from "../../assets/img/plus.svg"
+import { useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSpinner } from "@fortawesome/free-solid-svg-icons"
 
 export const Intro = ({ walletAddress, onConnectWalletHandler, mintLoading, onMintHandler }) => {
-  const [number, setNumber] = useState(1);
-  const [total, setTotal] = useState(0.03);
+  const [number, setNumber] = useState(1)
+  const [total, setTotal] = useState(0.03)
   const actionMinus = () => {
-    let index = number - 1;
-    setNumber(index);
-    setTotal(index * 0.03);
-  };
+    let index = number - 1
+    setNumber(index)
+    setTotal(index * 0.03)
+  }
 
   const actionPlus = () => {
-    let index = number + 1;
-    setNumber(index);
-    setTotal(index * 0.03);
-  };
+    let index = number + 1
+    setNumber(index)
+    setTotal(index * 0.03)
+  }
 
   const mintAction = () => {
-    onMintHandler(number);
-  };
+    onMintHandler(number)
+  }
 
   return (
     <section className="intro" id="intro">
@@ -44,7 +44,7 @@ export const Intro = ({ walletAddress, onConnectWalletHandler, mintLoading, onMi
             <button
               className="intro__drop__date__mint__minus"
               onClick={() => {
-                return number > 1 ? actionMinus() : null;
+                return number > 1 ? actionMinus() : null
               }}
             >
               <img alt="src" src={minus}></img>
@@ -59,14 +59,14 @@ export const Intro = ({ walletAddress, onConnectWalletHandler, mintLoading, onMi
             <button
               className="intro__drop__date__mint__place"
               onClick={() => {
-                if (!mintLoading) mintAction();
+                if (!mintLoading) mintAction()
               }}
             >
-              {' '}
+              {" "}
               {mintLoading && (
                 <FontAwesomeIcon className="mint-spinner" icon={faSpinner} size="0.4x" />
               )}
-              &nbsp;mint{' '}
+              &nbsp;mint{" "}
             </button>
           </div>
 
@@ -74,7 +74,7 @@ export const Intro = ({ walletAddress, onConnectWalletHandler, mintLoading, onMi
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Intro;
+export default Intro

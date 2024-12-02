@@ -1,12 +1,12 @@
-import './Overview.css';
-import moment from 'moment';
+import "./Overview.css"
+import moment from "moment"
 
 export const Overview = (props) => {
   const epochToDate = (epoch) => {
-    return moment.unix(epoch).format('DD MMM YYYY');
-  };
+    return moment.unix(epoch).format("DD MMM YYYY")
+  }
 
-  const data = props.data;
+  const data = props.data
   return (
     <div className="overviewDiv">
       <div className="overviewWrappDiv">
@@ -35,7 +35,7 @@ export const Overview = (props) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Overview;
+export default Overview
