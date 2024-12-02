@@ -1,105 +1,105 @@
-import './NavBar.css';
+import "./NavBar.css"
 
-import React, { useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import Grid from '@mui/material/Grid';
+import React, { useEffect, useContext } from "react"
+import { Link } from "react-router-dom"
+import Grid from "@mui/material/Grid"
 
-import logoImg from '../../assets/img/logo.png';
+import logoImg from "../../assets/img/logo.png"
 
-import { connectWallet, getCurrentWalletConnected } from '../../helpers/wallet';
-import { NotificationManager } from 'react-notifications';
-import { useNavigate } from 'react-router-dom';
-import { AppContext } from '../../context';
+import { connectWallet, getCurrentWalletConnected } from "../../helpers/wallet"
+import { NotificationManager } from "react-notifications"
+import { useNavigate } from "react-router-dom"
+import { AppContext } from "../../context"
 
 export const NavBar = () => {
-  const [tool, setTool] = React.useState(false);
-  const { walletAddress, handleWalletAddress } = useContext(AppContext);
-  const [isMetaMaskInstalled, setIsMetaMaskInstalled] = React.useState(false);
+  const [tool, setTool] = React.useState(false)
+  const { walletAddress, handleWalletAddress } = useContext(AppContext)
+  const [isMetaMaskInstalled, setIsMetaMaskInstalled] = React.useState(false)
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   useEffect(() => {
     const initDatas = async () => {
       if (window.ethereum) {
-        setIsMetaMaskInstalled(true);
-        const { address } = await getCurrentWalletConnected();
-        handleWalletAddress(address);
-        onChangeWalletListener();
-        onConnectWalletHandler();
+        setIsMetaMaskInstalled(true)
+        const { address } = await getCurrentWalletConnected()
+        handleWalletAddress(address)
+        onChangeWalletListener()
+        onConnectWalletHandler()
       } else {
-        setIsMetaMaskInstalled(false);
-        NotificationManager.success('🦊 You must install MetaMask in your browser');
+        setIsMetaMaskInstalled(false)
+        NotificationManager.success("🦊 You must install MetaMask in your browser")
       }
-    };
-    initDatas();
-  }, []);
+    }
+    initDatas()
+  }, [])
 
   const onConnectWalletHandler = async () => {
-    const walletResponse = await connectWallet();
-    handleWalletAddress(walletResponse.address);
-  };
+    const walletResponse = await connectWallet()
+    handleWalletAddress(walletResponse.address)
+  }
 
   const onDisconnectWalletHandler = () => {
-    handleWalletAddress('');
-    NotificationManager.info('Wallet disconnected');
-  };
+    handleWalletAddress("")
+    NotificationManager.info("Wallet disconnected")
+  }
 
   const onChangeWalletListener = async () => {
     if (isMetaMaskInstalled) {
-      window.ethereum.on('accountsChanged', (accounts) => {
+      window.ethereum.on("accountsChanged", (accounts) => {
         if (accounts.length) {
-          handleWalletAddress(accounts[0]);
+          handleWalletAddress(accounts[0])
         } else {
-          handleWalletAddress('');
+          handleWalletAddress("")
         }
-      });
+      })
 
-      window.ethereum.on('chainChanged', () => {
-        onConnectWalletHandler();
-      });
+      window.ethereum.on("chainChanged", () => {
+        onConnectWalletHandler()
+      })
     }
-  };
+  }
 
   const toolsChanged = (event) => {
-    navigate(event.target.value, { replace: true });
-  };
+    navigate(event.target.value, { replace: true })
+  }
 
   const logoImgClicked = () => {
-    navigate('/', { replace: true });
-  };
+    navigate("/", { replace: true })
+  }
 
   const levelUpBtnClicked = () => {
-    navigate('/levelup', { replace: true });
-  };
+    navigate("/levelup", { replace: true })
+  }
 
   const treasuryBtnClicked = () => {
-    navigate('/treasury', { replace: true });
-  };
+    navigate("/treasury", { replace: true })
+  }
 
   const renderWalletButton = () => {
     if (!isMetaMaskInstalled) {
       return (
         <button
           className="navBtn"
-          onClick={() => window.open('https://metamask.io/download.html', '_blank')}
+          onClick={() => window.open("https://metamask.io/download.html", "_blank")}
         >
           Install Wallet
         </button>
-      );
-    } else if (walletAddress === '') {
+      )
+    } else if (walletAddress === "") {
       return (
         <button className="navBtn" onClick={onConnectWalletHandler}>
           Connect Wallet
         </button>
-      );
+      )
     } else {
       return (
         <button className="navBtn" onClick={onDisconnectWalletHandler}>
           Disconnect Wallet
         </button>
-      );
+      )
     }
-  };
+  }
 
   return (
     <div>
@@ -116,10 +116,10 @@ export const NavBar = () => {
             md={6}
             lg={4}
             sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <div className="inputDiv">
@@ -132,10 +132,10 @@ export const NavBar = () => {
             md={12}
             lg={4}
             sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <div className="navBtns">
@@ -168,7 +168,7 @@ export const NavBar = () => {
           placeholder="Tools"
           onFocus={() => setTool(true)}
         >
-          <option style={{ display: tool ? 'none' : 'hidden' }}>Tools</option>
+          <option style={{ display: tool ? "none" : "hidden" }}>Tools</option>
         </select>
 
         <button id="treasuryBtn" onClick={treasuryBtnClicked}>
@@ -181,7 +181,7 @@ export const NavBar = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

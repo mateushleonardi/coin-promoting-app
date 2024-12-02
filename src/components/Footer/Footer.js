@@ -1,8 +1,8 @@
-import './Footer.css';
-import logoBlackImg from '../../assets/img/logo_black.png';
-import Grid from '@mui/material/Grid';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import "./Footer.css"
+import logoBlackImg from "../../assets/img/logo_black.png"
+import Grid from "@mui/material/Grid"
+import React from "react"
+import ReactDOM from "react-dom"
 
 export const Footer = () => {
   return (
@@ -14,37 +14,37 @@ export const Footer = () => {
       <div className="gridArea">
         <Grid container>
           <Grid item xs={12} md={6}>
-            {' '}
-            <span> Coinlocator</span>{' '}
+            {" "}
+            <span> Coinlocator</span>{" "}
           </Grid>
           <Grid item xs={12} md={6}>
-            {' '}
-            <span> Staking Platform</span>{' '}
+            {" "}
+            <span> Staking Platform</span>{" "}
           </Grid>
           <Grid item xs={12} md={6}>
-            {' '}
-            <span> Launchpad </span>{' '}
+            {" "}
+            <span> Launchpad </span>{" "}
           </Grid>
           <Grid item xs={12} md={6}>
-            {' '}
-            <span> DEX</span>{' '}
+            {" "}
+            <span> DEX</span>{" "}
           </Grid>
           <Grid item xs={12} md={6}>
-            {' '}
-            <span> Airdrop </span>{' '}
+            {" "}
+            <span> Airdrop </span>{" "}
           </Grid>
           <Grid item xs={12} md={6}>
-            {' '}
-            <span> Volume Machine</span>{' '}
+            {" "}
+            <span> Volume Machine</span>{" "}
           </Grid>
           <Grid item xs={12} md={6}>
-            {' '}
-            <span> Projects </span>{' '}
+            {" "}
+            <span> Projects </span>{" "}
           </Grid>
         </Grid>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
