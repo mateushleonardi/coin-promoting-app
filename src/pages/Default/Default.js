@@ -1,17 +1,17 @@
-import './Default.css';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import "./Default.css"
+import React from "react"
+import ReactDOM from "react-dom"
 
-import advertiseImg from '../../assets/img/advertise.png';
+import advertiseImg from "../../assets/img/advertise.png"
 
-import banner1Img from '../../assets/img/banner1.jpg';
-import banner2Img from '../../assets/img/banner2.jpg';
-import banner3Img from '../../assets/img/banner3.jpg';
-import banner4Img from '../../assets/img/banner4.jpg';
+import banner1Img from "../../assets/img/banner1.jpg"
+import banner2Img from "../../assets/img/banner2.jpg"
+import banner3Img from "../../assets/img/banner3.jpg"
+import banner4Img from "../../assets/img/banner4.jpg"
 
-import Promoted from '../../components/PromotedCoins/Promoted';
+import Promoted from "../../components/PromotedCoins/Promoted"
 
-import Filter from '../../components/Filter/Filter';
+import Filter from "../../components/Filter/Filter"
 
 export const Default = (event) => {
   return (
@@ -38,7 +38,7 @@ export const Default = (event) => {
 
       <div className="allCoinDiv"></div>
     </div>
-  );
-};
+  )
+}
 
-export default Default;
+export default Default

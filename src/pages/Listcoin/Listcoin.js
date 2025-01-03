@@ -1,161 +1,161 @@
-import './Listcoin.css';
+import "./Listcoin.css"
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react"
+import ReactDOM from "react-dom"
 
-import coinLocatorImg from '../../assets/img/Form/artboard1.png';
-import openFolderImg from '../../assets/img/Form/openFolder.png';
-import getListedCoin from '../../assets/img/Form/getListedCoin.png';
+import coinLocatorImg from "../../assets/img/Form/artboard1.png"
+import openFolderImg from "../../assets/img/Form/openFolder.png"
+import getListedCoin from "../../assets/img/Form/getListedCoin.png"
 
-import { useState, useEffect } from 'react';
-import { NotificationManager } from 'react-notifications';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import { useState, useEffect } from "react"
+import { NotificationManager } from "react-notifications"
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
 
-import { useNavigate } from 'react-router-dom';
-import bscImg from '../../assets/img/binance.svg';
-import ethImg from '../../assets/img/ethereum.svg';
+import { useNavigate } from "react-router-dom"
+import bscImg from "../../assets/img/binance.svg"
+import ethImg from "../../assets/img/ethereum.svg"
 
 export const Listcoin = (event) => {
-  const [name, setName] = useState('');
-  const [symbol, setSymbol] = useState('');
-  const [network, setNetwork] = useState('BSC');
-  const [description, setDescription] = useState('');
-  const [chartlink, setChartlink] = useState('');
-  const [swaplink, setSwaplink] = useState('');
-  const [websitelink, setWebsitelink] = useState('');
-  const [telegramlink, setTelegramlink] = useState('');
-  const [twitterlink, setTwitterlink] = useState('');
-  const [discordlink, setDiscordlink] = useState('');
-  const [contactemail, setContactEmail] = useState('');
-  const [kyc, setKYC] = useState('');
-  const [audit, setAudit] = useState('');
-  const [videolink, setVideoLink] = useState('');
-  const [cmclink, setCMCLink] = useState('');
-  const [contractAddr, setContractAddr] = useState('');
+  const [name, setName] = useState("")
+  const [symbol, setSymbol] = useState("")
+  const [network, setNetwork] = useState("BSC")
+  const [description, setDescription] = useState("")
+  const [chartlink, setChartlink] = useState("")
+  const [swaplink, setSwaplink] = useState("")
+  const [websitelink, setWebsitelink] = useState("")
+  const [telegramlink, setTelegramlink] = useState("")
+  const [twitterlink, setTwitterlink] = useState("")
+  const [discordlink, setDiscordlink] = useState("")
+  const [contactemail, setContactEmail] = useState("")
+  const [kyc, setKYC] = useState("")
+  const [audit, setAudit] = useState("")
+  const [videolink, setVideoLink] = useState("")
+  const [cmclink, setCMCLink] = useState("")
+  const [contractAddr, setContractAddr] = useState("")
 
-  const [presaleflag, setPresaleFlag] = useState(false);
-  const [logoImg, setLogoImg] = useState(openFolderImg);
-  const [checked, setChecked] = useState(false);
-  const [startDate, setStartDate] = useState(new Date());
+  const [presaleflag, setPresaleFlag] = useState(false)
+  const [logoImg, setLogoImg] = useState(openFolderImg)
+  const [checked, setChecked] = useState(false)
+  const [startDate, setStartDate] = useState(new Date())
 
-  const [submitClicked, setSubmitClicked] = useState(false);
-  const [listingInfo, setListingInfo] = useState({});
+  const [submitClicked, setSubmitClicked] = useState(false)
+  const [listingInfo, setListingInfo] = useState({})
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const onChangeName = (event) => {
-    setName(event.target.value);
-  };
+    setName(event.target.value)
+  }
 
   const onChangeSymbol = (event) => {
-    setSymbol(event.target.value);
-  };
+    setSymbol(event.target.value)
+  }
 
   const onChangeNetwork = (event) => {
-    if (event.target.value === 'BSC') {
-      setNetwork('BSC');
+    if (event.target.value === "BSC") {
+      setNetwork("BSC")
     } else {
-      setNetwork('ETH');
+      setNetwork("ETH")
     }
-  };
+  }
 
   const onChangeDescription = (event) => {
-    setDescription(event.target.value);
-  };
+    setDescription(event.target.value)
+  }
 
   const onChangeChartlink = (event) => {
-    setChartlink(event.target.value);
-  };
+    setChartlink(event.target.value)
+  }
 
   const onChangeSwaplink = (rooent) => {
-    setSwaplink(event.target.value);
-  };
+    setSwaplink(event.target.value)
+  }
 
   const onChangeWebsitelink = (event) => {
-    setWebsitelink(event.target.value);
-  };
+    setWebsitelink(event.target.value)
+  }
   const onChangeTelegramlink = (event) => {
-    setTelegramlink(event.target.value);
-  };
+    setTelegramlink(event.target.value)
+  }
   const onChangeTwitterlink = (event) => {
-    setTwitterlink(event.target.value);
-  };
+    setTwitterlink(event.target.value)
+  }
   const onChangeKYC = (event) => {
-    setKYC(event.target.value);
-  };
+    setKYC(event.target.value)
+  }
   const onChangeAudit = (event) => {
-    setAudit(event.target.value);
-  };
+    setAudit(event.target.value)
+  }
   const onChangeVideoLink = (event) => {
-    setVideoLink(event.target.value);
-  };
+    setVideoLink(event.target.value)
+  }
   const onChangeCMCLink = (event) => {
-    setCMCLink(event.target.value);
-  };
+    setCMCLink(event.target.value)
+  }
   const onChangeContractAddr = (event) => {
-    setContractAddr(event.target.value);
-  };
+    setContractAddr(event.target.value)
+  }
   const onChangeDiscordLink = (event) => {
-    setDiscordlink(event.target.value);
-  };
+    setDiscordlink(event.target.value)
+  }
   const onChangeContactEmail = (event) => {
-    setContactEmail(event.target.value);
-  };
+    setContactEmail(event.target.value)
+  }
 
   const onChangePresale = (event) => {
-    if (event.target.value === 'Yes') {
-      setPresaleFlag(true);
+    if (event.target.value === "Yes") {
+      setPresaleFlag(true)
     } else {
-      setPresaleFlag(false);
+      setPresaleFlag(false)
     }
-  };
+  }
 
   const onChangeTermsAndConditions = (event) => {
-    setChecked(event.target.checked);
-  };
+    setChecked(event.target.checked)
+  }
 
   const validateFunc = () => {
-    console.log(name, symbol, network, websitelink, telegramlink, contractAddr, 'debug');
-    if (name === '') return false;
-    if (symbol === '') return false;
-    if (network === '') return false;
-    if (websitelink === '') return false;
-    if (telegramlink === '') return false;
-    if (contractAddr === '') return false;
+    console.log(name, symbol, network, websitelink, telegramlink, contractAddr, "debug")
+    if (name === "") return false
+    if (symbol === "") return false
+    if (network === "") return false
+    if (websitelink === "") return false
+    if (telegramlink === "") return false
+    if (contractAddr === "") return false
 
-    return true;
-  };
+    return true
+  }
 
   const backBtnClicked = () => {
-    console.log(process.env.REACT_APP_SERVER_URL);
-    navigate(-1, { replace: true });
-  };
+    console.log(process.env.REACT_APP_SERVER_URL)
+    navigate(-1, { replace: true })
+  }
 
   const submitListingInfo = () => {
     if (validateFunc() === false) {
-      NotificationManager.error('You must fill the all * empty blanks.');
-      return;
+      NotificationManager.error("You must fill the all * empty blanks.")
+      return
     }
     if (checked === false) {
-      NotificationManager.error('You have to agree with Terms and Conditions.');
-      return;
+      NotificationManager.error("You have to agree with Terms and Conditions.")
+      return
     }
 
     if (logoImg === openFolderImg) {
-      NotificationManager.error('You have to upload logo image before submit.');
-      return;
+      NotificationManager.error("You have to upload logo image before submit.")
+      return
     }
 
-    let chartlink_check = false;
-    if (chartlink !== '' && chartlink.includes('https://poocoin.app/', 0) === true)
-      chartlink_check = true;
-    if (chartlink !== '' && chartlink.includes('https://dextools.io/', 0) === true)
-      chartlink_check = true;
+    let chartlink_check = false
+    if (chartlink !== "" && chartlink.includes("https://poocoin.app/", 0) === true)
+      chartlink_check = true
+    if (chartlink !== "" && chartlink.includes("https://dextools.io/", 0) === true)
+      chartlink_check = true
 
     if (chartlink_check === false) {
-      NotificationManager.error('You have to insert only Poocoin or Dextool Url for chart link.');
-      return;
+      NotificationManager.error("You have to insert only Poocoin or Dextool Url for chart link.")
+      return
     }
 
     let buffer = {
@@ -178,7 +178,7 @@ export const Listcoin = (event) => {
       contractAddr: contractAddr,
       videolink: videolink,
 
-      launch: Number(Math.floor(new Date(startDate).getTime() / 1000), 'epoch'),
+      launch: Number(Math.floor(new Date(startDate).getTime() / 1000), "epoch"),
       listed: Number(Math.floor(Date.now() / 1000)),
 
       voteCount: 0,
@@ -188,24 +188,24 @@ export const Listcoin = (event) => {
       weeklyStart: 0,
       weeklyCount: 0,
 
-      watchlist: '',
+      watchlist: "",
       promoted: 0,
-    };
+    }
     // setSubmitClicked(true);
-    setListingInfo(buffer);
-    navigate('/tiers/', { state: { info: buffer, id: '' } });
+    setListingInfo(buffer)
+    navigate("/tiers/", { state: { info: buffer, id: "" } })
     // pushToDb();
-  };
+  }
   const imgUploadInput = (e) => {
-    var reader = new FileReader();
+    var reader = new FileReader()
     reader.onload = function (evt) {
-      setLogoImg(evt.target.result);
-      console.log(logoImg);
-    };
-    reader.readAsDataURL(e.target.files[0]);
-  };
+      setLogoImg(evt.target.result)
+      console.log(logoImg)
+    }
+    reader.readAsDataURL(e.target.files[0])
+  }
 
-  useEffect(() => {}, [logoImg]);
+  useEffect(() => {}, [logoImg])
 
   return (
     <div className="listCoinDiv">
@@ -227,7 +227,7 @@ export const Listcoin = (event) => {
                 type="file"
                 id="uploadFileInput"
                 className="uploadFile"
-                style={{ display: 'none' }}
+                style={{ display: "none" }}
                 onChange={imgUploadInput}
               />
               <img src={logoImg} alt="" />
@@ -310,7 +310,7 @@ export const Listcoin = (event) => {
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             dateFormat="yyyy/MM/dd"
-            style={{ backgroundColor: 'transaparent' }}
+            style={{ backgroundColor: "transaparent" }}
           />
         </div>
         <div className="listingNormalDiv">
@@ -383,7 +383,7 @@ export const Listcoin = (event) => {
       </div>
       {/* ):(<Tiers info={listingInfo}/>)}  */}
     </div>
-  );
-};
+  )
+}
 
-export default Listcoin;
+export default Listcoin

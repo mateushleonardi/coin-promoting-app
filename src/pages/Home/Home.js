@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react"
+import ReactDOM from "react-dom"
 // import NavBar from "../../components/NavBar/NavBar";
 
-import Footer from '../../components/Footer/Footer';
-import Trendbar from '../../components/TrendBar/Trendbar';
-import Mainpage from '../../pages/Mainpage/Mainpage';
+import Footer from "../../components/Footer/Footer"
+import Trendbar from "../../components/TrendBar/Trendbar"
+import Mainpage from "../../pages/Mainpage/Mainpage"
 
 export const Home = () => {
   return (
@@ -13,7 +13,7 @@ export const Home = () => {
       <Mainpage />
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
