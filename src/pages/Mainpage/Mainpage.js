@@ -1,18 +1,18 @@
-import React from 'react';
+import React from "react"
 // import Grid from '@mui/material/Grid';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './Mainpage.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import "./Mainpage.css"
 
-import Tiers from '../Tiers/Tiers.js';
-import Listcoin from '../Listcoin/Listcoin.js';
-import Default from '../Default/Default.js';
-import Levelup from '../Levelup/Levelup.js';
-import Treasury from '../Treasury/Treasury.js';
-import NavBar from '../../components/NavBar/NavBar.js';
-import Details from '../../pages/Details/Details';
-import PromotePage from '../../pages/PromotePage/PromotePage.js';
+import Tiers from "../Tiers/Tiers.js"
+import Listcoin from "../Listcoin/Listcoin.js"
+import Default from "../Default/Default.js"
+import Levelup from "../Levelup/Levelup.js"
+import Treasury from "../Treasury/Treasury.js"
+import NavBar from "../../components/NavBar/NavBar.js"
+import Details from "../../pages/Details/Details"
+import PromotePage from "../../pages/PromotePage/PromotePage.js"
 
-import { WalletProvider } from '../../context';
+import { WalletProvider } from "../../context"
 
 export const Mainpage = () => {
   return (
@@ -36,7 +36,7 @@ export const Mainpage = () => {
         </div>
       </BrowserRouter>
     </WalletProvider>
-  );
-};
+  )
+}
 
-export default Mainpage;
+export default Mainpage

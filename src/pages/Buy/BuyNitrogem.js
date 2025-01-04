@@ -1,7 +1,7 @@
-import BuyCard from '../../components/BuyCard/BuyCard';
+import BuyCard from "../../components/BuyCard/BuyCard"
 // import Grid from '@mui/material/Grid';
 
-import './BuyNitrogem.css';
+import "./BuyNitrogem.css"
 
 export const BuyNitrogem = () => {
   return (
@@ -25,7 +25,7 @@ export const BuyNitrogem = () => {
         <BuyCard bnbAmount="5" nitroAmount="30000" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BuyNitrogem;
+export default BuyNitrogem

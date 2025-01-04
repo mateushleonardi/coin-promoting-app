@@ -1,9 +1,9 @@
-import './Levelup.css';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import "./Levelup.css"
+import React from "react"
+import ReactDOM from "react-dom"
 
-import levelupHeaderImg from '../../assets/img/levelup_header.png';
-import levelupFooterImg from '../../assets/img/levelup_footer.png';
+import levelupHeaderImg from "../../assets/img/levelup_header.png"
+import levelupFooterImg from "../../assets/img/levelup_footer.png"
 
 export const Levelup = () => {
   return (
@@ -24,7 +24,7 @@ export const Levelup = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Levelup;
+export default Levelup

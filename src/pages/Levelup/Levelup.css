@@ -10,7 +10,7 @@
 }
 
 .levelupWrappedDiv {
-  background-image: url('../../assets/img/levelup_bg1.png');
+  background-image: url("../../assets/img/levelup_bg1.png");
   background-size: cover;
 
   border-radius: 50px;
@@ -44,7 +44,7 @@
 
 @media only screen and (max-width: 1400px) {
   .levelupWrappedDiv {
-    background-image: url('../../assets/img/levelup_bg2.png');
+    background-image: url("../../assets/img/levelup_bg2.png");
   }
 }
 @media only screen and (max-width: 800px) {
