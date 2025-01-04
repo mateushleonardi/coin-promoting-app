@@ -1,43 +1,39 @@
 {
-  "name": "cointracker",
+  "name": "coinlocator",
   "version": "1.2.1",
-  "description": "Coin Tracking Dapp",
+  "description": "Coin Promoting & Voting Webapp",
   "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/coin-promoting/coin-promoting.git"
+    "url": "https://gitlab.com/cow-chain/coin-promoting-webapp"
   },
   "keywords": [
     "coin",
     "promoting",
-    "dapp"
+    "dapp",
+    "voting",
+    "blockchain",
+    "smart",
+    "contract",
+    "react",
+    "javascript",
+    "node",
+    "express",
+    "mongodb",
+    "sequelize",
+    "truffle",
+    "metamask",
+    "polygon",
+    "bsc",
+    "web3"
   ],
   "bugs": {
-    "url": "https://github.com/coin-promoting/coin-promoting/issues"
+    "url": "https://gitlab.com/cow-chain/coin-promoting-webapp/issues"
   },
-  "author": "Lamoerey",
+  "author": "drop5",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "bootstrap": "4.3.1",
-    "chai": "4.2.0",
-    "chalk": "^4.1.2",
-    "concurrently": "5.1.0",
-    "cors": "^2.8.5",
-    "crypto": "^1.0.1",
-    "express": "^4.17.1",
-    "express-ws": "^4.0.0",
-    "fs": "^0.0.1-security",
-    "mdbreact": "^5.1.0",
-    "path": "^0.12.7",
-    "react-cookies": "^0.1.1",
-    "react-router": "^5.2.1",
-    "react-toastify": "^5.5.0",
-    "request": "^2.88.2",
-    "sequelize": "^5.16.0",
-    "sqlite3": "^5.1.6",
     "@baublet/use-global-state": "^1.1.0",
-    "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -54,44 +50,41 @@
     "@web3-react/core": "^6.1.9",
     "@web3-react/injected-connector": "^6.0.7",
     "axios": "^0.21.4",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "ethers": "^5.4.6",
     "firebase": "^8.3.1",
     "moment": "^2.29.4",
-    "momentjs": "^2.0.0",
     "mui-datatables": "^3.8.2",
+    "path": "^0.12.7",
     "react": "^17.0.2",
-    "react-bootstrap": "^2.0.0",
+    "react-cookies": "^0.1.1",
     "react-datepicker": "^4.8.0",
     "react-dom": "^17.0.2",
-    "react-faq-component": "^1.3.1",
-    "react-hooks-global-state": "^2.0.0",
     "react-notifications": "^1.7.2",
-    "react-on-images-loaded": "^2.2.5",
     "react-pancakeswap-token-price": "^1.1.1",
+    "react-router": "^5.2.1",
     "react-router-dom": "^6.0.0",
     "react-scripts": "^4.0.3",
-    "react-scroll": "^1.8.4",
-    "react-slideshow-image": "^3.6.0",
+    "react-toastify": "^5.5.0",
     "sass": "^1.43.4",
-    "telegraf": "^4.10.0",
-    "truffle-plugin-verify": "^0.5.15",
-    "uniswap-price": "^1.0.4",
+    "semver": "^7.6.3",
+    "sequelize": "^5.16.0",
+    "servify": "^0.1.12",
+    "sqlite3": "^5.1.6",
     "web-vitals": "^1.0.1",
     "web3": "^1.6.0",
     "webpack": "^4.44.0"
   },
-  "devDependencies": {
-    "nodemon": "^1.19.1",
-    "sequelize-cli": "^5.5.0"
-  },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"react-scripts --openssl-legacy-provider start\" --kill-others --kill-others-on-fail",
-    "server": "node server/app.js",
-    "test": "react-scripts test",
-    "start-server": "nodemon server/app.js --watch server/*",
-    "build": "node server/app.js | react-scripts --openssl-legacy-provider build",
-    "eject": "react-scripts eject"
+    "start": "npm run check-env && npm run app:pre | react-scripts --openssl-legacy-provider start --kill-others --kill-others-on-fail",
+    "prepare": "npm run app:pre | react-scripts --openssl-legacy-provider build --kill-others --kill-others-on-fail",
+    "eject": "react-scripts eject",
+    "app:pre": "node app/index.js",
+    "check-env": "node ./check-environment.js",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
@@ -104,5 +97,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "engines": {
+    "node": ">=18.19.0",
+    "npm": ">=8.0.0",
+    "yarn": ">=1.22.0"
+  }
 }
