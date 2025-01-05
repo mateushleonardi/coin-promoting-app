@@ -1,47 +1,47 @@
-# Coin Promotion System for CoinProperty 💎✨  
+# Coin Promotion WebApp for CoinProperty 💎✨  
 
-This project, initiated by **CoinProperty**, bridges blockchain governance with real estate token promotion. Built on **Solidity** smart contracts and hosted on the **Sepolia Testnet**, it enables decentralized decision-making and incentivized participation. The frontend is powered by **React** and **JavaScript**, seamlessly connecting smart contracts to an intuitive user interface.  
-
----  
-
-## How It Works 🔄  
-
-The system combines **Coin-based voting functionality** with real estate token staking and reward mechanisms, creating a robust Web3 governance and engagement platform.  
-
-Below is an overview of the workflow:  
+This project, developed by **CoinProperty**, is designed to integrate **blockchain governance** with real estate token promotion. It enables decentralized decision-making and incentivized participation. The frontend should be built with **Next.js** and **TypeScript**, ensuring a seamless connection between smart contracts and an intuitive user interface.  
 
 ---  
 
-### 1. Staking Feature for Real Estate Tokens 🔐  
+## How It Works 🛍️  
 
-- Allow users to stake real estate tokens for fixed durations to earn rewards.  
-- Integrate staking with the voting system, requiring token staking before voting on property proposals.  
-- Design reward mechanisms based on staked amounts and staking durations to promote property token engagement.  
+The platform merges **coin-based voting functionalities** with property token staking and reward mechanisms to create a robust Web3 engagement and governance system.  
 
-### 2. Token Promotion Feature for Properties 📈  
+Below is an overview of the core functionalities:  
 
-- Implement token reward incentives for participation in property-related votes and staking activities.  
-- Automate reward calculations based on voting and staking activity to promote long-term engagement.  
-- Drive user participation through gamified incentives, enhancing real estate token adoption.  
+---  
+
+### 1. Staking Mechanism for Real Estate Tokens 🔒  
+
+- Users can stake real estate tokens for fixed durations to earn rewards.  
+- Staking is required before participating in property-related voting.  
+- Reward mechanisms are based on staking amounts and durations, incentivizing long-term engagement.  
+
+### 2. Property Token Promotion 🌟  
+
+- Token-based incentives for voting and staking activities.  
+- Automated reward calculations to encourage user participation.  
+- Gamified engagement to boost real estate token adoption and visibility.  
 
 ### 3. Platform Enhancements 🔧  
 
-- Upgrade UI/UX for a premium real estate token experience.  
-- Add advanced voting options tailored for real estate decisions:  
-  - Weighted voting based on token stakes.  
+- **Next.js-powered UI/UX upgrades** for an optimized real estate token experience.  
+- **Advanced voting options** for property governance:  
+  - Weighted voting based on stake amounts.  
   - Ranked-choice voting for property prioritization.  
-- Enable Ethereum Mainnet integration for broader accessibility.  
-- Fortify security with features such as multi-sig wallets and reentrancy protection to safeguard investments.  
+- **Ethereum Mainnet integration** for broader user access.  
+- **Enhanced security measures**, including multi-sig wallets and reentrancy protection.  
 
 ---  
 
-## Running the App 👩‍💻  
+## Running the WebApp 👩‍💻  
 
 ### Clone the Repository  
 
 ```sh  
-git clone https://gitlab.com/cowchain/coin-promoting-webapp.git
-cd coin-promoting-webapp
+git clone https://github.com/canmundane-org/coin-promoting-app
+cd coin-promoting-app  
 ```  
 
 ### Install Dependencies  
@@ -56,6 +56,6 @@ npm install
 npm start  
 ```  
 
-## License 📄  
+## License 📝  
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.  
+This project is licensed under a **Limited License**. Usage is restricted to **CoinProperty (https://coinproperty.io), headquartered in Dubai, UAE**. See the [LICENSE](LICENSE) file for details.
