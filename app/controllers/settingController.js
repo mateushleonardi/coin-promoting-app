@@ -1,4 +1,4 @@
-const { Snipping, Front, SnippingDetail, FrontDetail } = require("../models")
+const { Snipping, Front, SnippingDetail, FrontDetail } = require('../models');
 // const app = require('../app.js');
 
 function sendUpdateMessage() {
@@ -17,7 +17,7 @@ function resetSnipping(req, res) {
     .then((status) =>
       res.status(201).json({
         error: false,
-        message: "Snipping Information has been deleted",
+        message: 'Snipping Information has been deleted',
       })
     )
     .catch((error) =>
@@ -25,8 +25,8 @@ function resetSnipping(req, res) {
         error: true,
         message: error,
       })
-    )
-  sendUpdateMessage()
+    );
+  sendUpdateMessage();
 }
 
 function resetFront(req, res) {
@@ -38,7 +38,7 @@ function resetFront(req, res) {
     .then((status) =>
       res.status(201).json({
         error: false,
-        message: "Snipping Information has been deleted",
+        message: 'Snipping Information has been deleted',
       })
     )
     .catch((error) =>
@@ -46,8 +46,8 @@ function resetFront(req, res) {
         error: true,
         message: error,
       })
-    )
-  sendUpdateMessage()
+    );
+  sendUpdateMessage();
 }
 
 function initSnipping(req, res) {
@@ -58,7 +58,7 @@ function initSnipping(req, res) {
     .then((status) =>
       res.status(201).json({
         error: false,
-        message: "Snipping Transaction History has been deleted",
+        message: 'Snipping Transaction History has been deleted',
       })
     )
     .catch((error) =>
@@ -66,8 +66,8 @@ function initSnipping(req, res) {
         error: true,
         message: error,
       })
-    )
-  sendUpdateMessage()
+    );
+  sendUpdateMessage();
 }
 
 function initFront(req, res) {
@@ -78,7 +78,7 @@ function initFront(req, res) {
     .then((status) =>
       res.status(201).json({
         error: false,
-        message: "Front running Transaction History has been deleted",
+        message: 'Front running Transaction History has been deleted',
       })
     )
     .catch((error) =>
@@ -86,8 +86,8 @@ function initFront(req, res) {
         error: true,
         message: error,
       })
-    )
-  sendUpdateMessage()
+    );
+  sendUpdateMessage();
 }
 
 function resetAll(req, res) {
@@ -95,18 +95,18 @@ function resetAll(req, res) {
     where: {
       id: 1,
     },
-  })
+  });
 
   Front.destroy({
     where: {
       id: 1,
     },
-  })
+  });
 
   SnippingDetail.destroy({
     where: {},
     truncate: true,
-  })
+  });
 
   FrontDetail.destroy({
     where: {},
@@ -115,7 +115,7 @@ function resetAll(req, res) {
     .then((status) =>
       res.status(201).json({
         error: false,
-        message: "All Information has been deleted",
+        message: 'All Information has been deleted',
       })
     )
     .catch((error) =>
@@ -123,8 +123,8 @@ function resetAll(req, res) {
         error: true,
         message: error,
       })
-    )
-  sendUpdateMessage()
+    );
+  sendUpdateMessage();
 }
 
 module.exports = {
@@ -133,4 +133,4 @@ module.exports = {
   resetFront,
   resetSnipping,
   resetAll,
-}
+};

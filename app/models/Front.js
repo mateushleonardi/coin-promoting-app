@@ -1,6 +1,6 @@
 module.exports = function (sequelize, Sequalize) {
   var Front = sequelize.define(
-    "Front",
+    'Front',
     {
       status: Sequalize.STRING,
       node: Sequalize.STRING,
@@ -14,9 +14,9 @@ module.exports = function (sequelize, Sequalize) {
     {
       timestamps: false,
     }
-  )
+  );
   Front.associate = function (models) {
     // associations can be defined here
-  }
-  return Front
-}
+  };
+  return Front;
+};

