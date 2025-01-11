@@ -1,6 +1,6 @@
 module.exports = function (sequelize, Sequalize) {
   var Token = sequelize.define(
-    "Token",
+    'Token',
     {
       name: Sequalize.STRING,
       symbol: Sequalize.STRING,
@@ -10,9 +10,9 @@ module.exports = function (sequelize, Sequalize) {
     {
       timestamps: false,
     }
-  )
+  );
   Token.associate = function (models) {
     // associations can be defined here
-  }
-  return Token
-}
+  };
+  return Token;
+};
