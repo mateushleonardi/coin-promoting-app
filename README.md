@@ -1,6 +1,6 @@
 # Coin Promotion WebApp for CoinProperty 💎✨  
 
-This project, developed by **CoinProperty**, is designed to integrate **blockchain governance** with real estate token promotion. It enables decentralized decision-making and incentivized participation. The frontend should be built with **Next.js** and **TypeScript**, ensuring a seamless connection between smart contracts and an intuitive user interface.  
+This project, developed by **CoinProperty**, is designed to integrate **blockchain governance** with real estate token promotion. It enables decentralized decision-making and incentivized participation.
 
 ---  
 
@@ -26,7 +26,7 @@ Below is an overview of the core functionalities:
 
 ### 3. Platform Enhancements 🔧  
 
-- **Next.js-powered UI/UX upgrades** for an optimized real estate token experience.  
+- **powered UI/UX upgrades** for an optimized real estate token experience.  
 - **Advanced voting options** for property governance:  
   - Weighted voting based on stake amounts.  
   - Ranked-choice voting for property prioritization.  
@@ -40,8 +40,8 @@ Below is an overview of the core functionalities:
 ### Clone the Repository  
 
 ```sh  
-git clone https://github.com/canmundane-org/coin-promoting-app
-cd coin-promoting-app  
+git clone https://github.com/MetaBuilderGroup76/coin-promotion-app
+cd coin-promotion-app  
 ```  
 
 ### Install Dependencies  
@@ -58,4 +58,4 @@ npm start
 
 ## License 📝  
 
-This project is licensed under a **Limited License**. Usage is restricted to **CoinProperty (https://coinproperty.io), headquartered in Dubai, UAE**. See the [LICENSE](LICENSE) file for details.
+This project is licensed under a **Limited License**.

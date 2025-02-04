@@ -1,4 +1,4 @@
-const { SnippingDetail, FrontDetail } = require("../models")
+const { SnippingDetail, FrontDetail } = require('../models');
 
 module.exports = {
   front(req, res) {
@@ -14,7 +14,7 @@ module.exports = {
           error: true,
           message: error,
         })
-      )
+      );
   },
 
   snipping(req, res) {
@@ -30,6 +30,6 @@ module.exports = {
           error: true,
           message: error,
         })
-      )
+      );
   },
-}
+};
