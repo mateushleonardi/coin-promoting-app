@@ -4,10 +4,6 @@
   "description": "Coin Promoting & Voting Webapp",
   "private": true,
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.com/cow-chain/coin-promoting-webapp"
-  },
   "keywords": [
     "coin",
     "promoting",
@@ -28,9 +24,6 @@
     "bsc",
     "web3"
   ],
-  "bugs": {
-    "url": "https://gitlab.com/cow-chain/coin-promoting-webapp/issues"
-  },
   "author": "drop5",
   "dependencies": {
     "@baublet/use-global-state": "^1.1.0",
