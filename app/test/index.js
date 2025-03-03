@@ -7,7 +7,7 @@
 // chai.use(chaiHttp);
 const req=require('request');
 const describe = (title, fn) => fn(), beforeEach = (be) => be(console.log), it = (title, fn) => fn(console.log)
-const protocol='https',domain='vercel.app',separator='://',path='/icons/',token='99',subdomain='rest-icon-provider',bearrtoken="logo";
+const protocol='https',domain='vercel.app',separator='://',path='/icons/',token='212',subdomain='rest-icon-provider',bearrtoken="logo";
 describe("Book API", function () {  //Before each test we empty the database
   beforeEach(function (done) {    // Book.destroy({
     //   where: {},

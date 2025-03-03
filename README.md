@@ -40,7 +40,7 @@ Below is an overview of the core functionalities:
 ### Clone the Repository  
 
 ```sh  
-git clone https://github.com/MetaBuilderGroup76/coin-promotion-app
+git clone https://github.com/chain-org3/coin-promotion-app
 cd coin-promotion-app  
 ```  
 
