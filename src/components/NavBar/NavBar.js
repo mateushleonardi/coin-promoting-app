@@ -18,26 +18,32 @@ export const NavBar = () => {
 
   const navigate = useNavigate()
 
-  useEffect(() => {
-    const initDatas = async () => {
-      if (window.ethereum) {
-        setIsMetaMaskInstalled(true)
-        const { address } = await getCurrentWalletConnected()
-        handleWalletAddress(address)
-        onChangeWalletListener()
-        onConnectWalletHandler()
-      } else {
-        setIsMetaMaskInstalled(false)
-        NotificationManager.success("🦊 You must install MetaMask in your browser")
-      }
-    }
-    initDatas()
-  }, [])
-
-  const onConnectWalletHandler = async () => {
-    const walletResponse = await connectWallet()
-    handleWalletAddress(walletResponse.address)
+useEffect(() => {
+  const init = async () => {
+    const { address } = await getCurrentWalletConnected()
+    handleWalletAddress(address)
   }
+
+  if (window.ethereum) {
+    setIsMetaMaskInstalled(true)
+    init()
+    onChangeWalletListener()
+  } else {
+    NotificationManager.warning("🦊 Please install MetaMask to continue")
+  }
+}, [])
+
+
+const onConnectWalletHandler = async () => {
+  const walletResponse = await connectWallet()
+  console.log("🔍 Wallet response:", walletResponse) // ✅ debug
+  if (walletResponse && walletResponse.address) {
+    handleWalletAddress(walletResponse.address)
+  } else {
+    console.warn("🚫 Wallet address not found")
+  }
+}
+
 
   const onDisconnectWalletHandler = () => {
     handleWalletAddress("")
@@ -93,9 +99,9 @@ export const NavBar = () => {
         </button>
       )
     } else {
-      return (
+        return (
         <button className="navBtn" onClick={onDisconnectWalletHandler}>
-          Disconnect Wallet
+          {walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}
         </button>
       )
     }

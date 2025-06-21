@@ -8,7 +8,6 @@ import diamondImg from "../../assets/img/diamond.png"
 import { useLocation } from "react-router-dom"
 
 import React from "react"
-import ReactDOM from "react-dom"
 
 import "./Tiers.css"
 

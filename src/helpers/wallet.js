@@ -10,7 +10,7 @@ export const connectWallet = async () => {
         method: "eth_chainId",
       })
 
-      if (parseInt(walletChainId) === parseInt(ENVS.CHAIN_ID)) {
+    if (walletChainId === ENVS.CHAIN_ID){
         const addressArray = await provider.request({
           method: "eth_requestAccounts",
         })

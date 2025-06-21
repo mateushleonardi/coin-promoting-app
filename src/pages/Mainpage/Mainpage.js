@@ -2,7 +2,14 @@ import React from "react"
 // import Grid from '@mui/material/Grid';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import "./Mainpage.css"
-
+import { useEffect, useState } from "react"
+import {
+  getTokenContract,
+  getStakingContract,
+  getVotingContract,
+  getQuestsContract
+} from "../../helpers/index.js"
+import { ContractProvider } from "../../context/ContractContext"
 import Tiers from "../Tiers/Tiers.js"
 import Listcoin from "../Listcoin/Listcoin.js"
 import Default from "../Default/Default.js"
@@ -17,6 +24,7 @@ import { WalletProvider } from "../../context"
 export const Mainpage = () => {
   return (
     <WalletProvider>
+      <ContractProvider>
       <BrowserRouter>
         <div className="mainPage">
           <NavBar />
@@ -35,6 +43,7 @@ export const Mainpage = () => {
           </div>
         </div>
       </BrowserRouter>
+      </ContractProvider>
     </WalletProvider>
   )
 }
